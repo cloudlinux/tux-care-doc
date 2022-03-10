@@ -795,7 +795,7 @@ kcarectl --tag ""
 Where `""` is a parameter to delete the previously defined tag.
 
 
-## Eportal API
+## ePortal API
 
 ### GET /admin/api/servers
 
