@@ -187,6 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             collapsable: false,
             children: [
               "/tuxcare/",
+              "/almacare/",
               "/live-patching-services/",
               "/kernelcare-for-iot/",
               "/eportal/",
