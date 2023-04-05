@@ -195,7 +195,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "/extended-lifecycle-support/",
               "/extended-lifecycle-support-for-languages/",
               "/linux-support-services/",
-              "/tuxcare-cln/"
+              "/tuxcare-cln/",
+              "/service-descriptions/"
             ]
           }
         ]
