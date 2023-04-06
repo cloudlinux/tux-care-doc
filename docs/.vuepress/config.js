@@ -194,7 +194,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "/eportal-api/",
               "/extended-lifecycle-support/",
               "/extended-lifecycle-support-for-languages/",
-              "/tuxcare-cln/"
+              "/tuxcare-cln/",
+              "/service-descriptions/"
             ]
           }
         ]
