@@ -8,17 +8,17 @@ Extended Lifecycle Support (ELS) for PHP from TuxCare provides security fixes fo
 
 TuxCare provides Extended Lifecycle Support through four years after the EOL date.
 
-| OS                                    | Version                                  |
-| :-----------------------------------: | :--------------------------------------: |
-| CentOS, CloudLinux, OracleLinux, etc. | 6.x 64-bit, 7.x 64-bit, 8.x 64-bit       |
-| AlmaLinux                             | 8.x 64-bit                               |
-| Ubuntu                                | 16.04 64-bit, 18.04 64-bit, 20.04 64-bit |
+| OS                                    | Version                                       |
+| :-----------------------------------: | :--------------------------------------:      |
+| CentOS, CloudLinux, OracleLinux, etc. | 6.x 64-bit, 7.x 64-bit, 8.x 64-bit, 9.x 64-bit|
+| AlmaLinux                             | 8.x 64-bit, 9.x 64-bit                        |
+| Ubuntu                                | 16.04 64-bit, 18.04 64-bit, 20.04 64-bit      |
 
 ### Supported versions
 
-**CentOS, CloudLinux, AlmaLinux, Oracle Linux, etc.:** 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1
+**CentOS, CloudLinux, AlmaLinux, Oracle Linux, etc.:** 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2
 
-**Ubuntu:** 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1
+**Ubuntu:** 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2
 
 ### Installation instructions of yum repositories
 
@@ -150,12 +150,14 @@ Use one of the suggested options to specify the OS:
 
 | Option      | OS                                                      |
 | :---------: | :-----------------------------------------------------: |
-| el6	      | CentOS 6, CloudLinux 6, OracleLinux 6, etc.             |
+| el6	      | CentOS 6, CloudLinux 6, OracleLinux 6, etc.               |
 | el7         | CentOS 6, CloudLinux 6, OracleLinux 6, etc.             |
-| el8         | AlmaLinux6, CentOS 6, CloudLinux 6, OracleLinux 6, etc. |
+| el8         | AlmaLinux 8, CentOS 8 Stream, CloudLinux 8.             |
+| el9         |AlmaLinux 9, CentOS 9 Stream, CloudLinux 9               |
 | ubuntu16.04 | Ubuntu 16.04 |
 | ubuntu18.04 | Ubuntu 18.04 |
 | ubuntu20.04 | Ubuntu 20.04 |
+| ubuntu22.04 | Ubuntu 22.04 |
 
 ### OVAL data
 
@@ -168,18 +170,22 @@ Currently, we provide OVAL data for the following OS versions:
 * EL 6 (CentOS, CloudLinux, OracleLinux, etc.)
 * EL 7 (CentOS, CloudLinux, OracleLinux, etc.)
 * EL 8 (AlmaLinux, CentOS, CloudLinux, OracleLinux, etc.)
+* EL 9 (AlmaLinux, CentOS, CloudLinux, etc.)
 * Ubuntu 16.04
 * Ubuntu 18.04
 * Ubuntu 20.04
+* Ubuntu 22.04
 
 #### TuxCare PHP ELS OVAL Streams
 
 * EL 6: [https://repo.cloudlinux.com/php-els/centos6-els-php-oval.xml](https://repo.cloudlinux.com/php-els/centos6-els-php-oval.xml)
 * EL 7: [https://repo.cloudlinux.com/php-els/centos7-els-php-oval.xml](https://repo.cloudlinux.com/php-els/centos7-els-php-oval.xml)
 * EL 8: [https://repo.cloudlinux.com/php-els/centos8-els-php-oval.xml](https://repo.cloudlinux.com/php-els/centos8-els-php-oval.xml)
+* EL 9: [https://repo.cloudlinux.com/php-els/centos9-els-php-oval.xml](https://repo.cloudlinux.com/php-els/centos9-els-php-oval.xml)
 * Ubuntu 16.04: [https://repo.cloudlinux.com/php-els/ubuntu16.04-els-php-oval.xml](https://repo.cloudlinux.com/php-els/ubuntu16.04-els-php-oval.xml)
 * Ubuntu 18.04: [https://repo.cloudlinux.com/php-els/ubuntu18.04-els-php-oval.xml](https://repo.cloudlinux.com/php-els/ubuntu18.04-els-php-oval.xml)
 * Ubuntu 20.04: [https://repo.cloudlinux.com/php-els/ubuntu20.04-els-php-oval.xml](https://repo.cloudlinux.com/php-els/ubuntu20.04-els-php-oval.xml)
+* Ubuntu 22.04: [https://repo.cloudlinux.com/php-els/ubuntu22.04-els-php-oval.xml](https://repo.cloudlinux.com/php-els/ubuntu22.04-els-php-oval.xml)
 
 #### How to use OVAL
 
@@ -203,90 +209,7 @@ oscap oval eval --results result.xml --report report.xml centos6-els-php-oval.xm
 
 ### PHP extensions list
 
-#### PHP 5.1 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-| bcmath<br>big_int<br>bitset<br>bz2_filter<br>coin_acceptor<br>crack<br>dba<br>dbase<br>dom<br>doublemetaphone<br>gd<br>geoip|gmagick<br>gnupg<br>haru<br>huffman<br>idn<br>igbinary<br>imagick<br>imap<br>inclued<br>inotify<br>interbase<br>ioncube_loader|ldap<br>lzf<br>mbstring<br>mcrypt<br>memcache<br>msgpack<br>ncurses<br>odbc<br>pdo<br>pdo_firebird<br>pdo_oci - only EL6, EL7 (not EL8)|pdo_odbc<br>pdo_pgsqlpdo_sqlite<br>pgsql<br>phalcon<br>quickhash<br>radius<br>redis<br>snmp<br>soap<br>sockets<br>ssh2<br>stats<br>stem<br>sybase_ct|sysvmsg<br>sysvsem<br>sysvshm<br>tidy<br>timezonedb<br>translit<br>xdebug<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xsl|
-
-#### PHP 5.2 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apc<br>apm<br>ares<br>bcmath<br>bcompiler<br>big_int<br>bitset<br>bloomy<br>bz2_filter<br>coin_acceptor<br>crack<br>dba<br>dbase<br>dbx<br>dom<br>doublemetaphone<br>enchant<br>fileinfo<br>gd<br>gender<br>geoip|geos<br>gmagick<br>gnupg<br>haru<br>hidef<br>htscanner<br>http<br>huffman<br>idn<br>igbinary<br>imagick<br>imap<br>inclued<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>json<br>ldap<br>lzf<br>mailparse|mbstring<br>mcrypt<br>memcache<br>memcached<br>mongo<br>msgpack<br>mssql<br>ncurses<br>oauth<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci - only EL6, EL7 (not EL8)<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pgsql<br>phalcon<br>phar<br>posix<br>pspell|quickhash<br>radius<br>rar<br>recode<br>redis<br>rsync<br>snmp<br>soap<br>sockets<br>spl_types<br>sqlite<br>ssh2<br>stats<br>stem<br>stomp<br>sybase_ct<br>sysvmsg<br>sysvsem<br>sysvshm<br>tidy<br>timezonedb<br>translit<br>uploadprogress|uuid<br>wddx<br>xdebug<br>xhprof<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xrange<br>xsl<br>yaf<br>yaz<br>ZendGuardLoader<br>zip|
-
-#### PHP 5.3 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apc<br>apcu<br>apm<br>ares<br>bcmath<br>bcompiler<br>big_int<br>bitset<br>bloomy<br>bz2_filter<br>coin_acceptor<br>crack<br>dba<br>dbase<br>dbx<br>dom<br>doublemetaphone<br>eio<br>enchant<br>fileinfo<br>functional<br>gd<br>gender<br>geoip|geos<br>gmagick<br>gnupg<br>haru<br>hidef<br>htscanner<br>http<br>huffman<br>idn<br>igbinary<br>imagick<br>imap<br>inclued<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>libevent<br>lzf<br>mailparse<br>mbstring|mcrypt<br>memcache<br>memcached<br>mongo<br>msgpack<br>mssql<br>mysqlnd<br>ncurses<br>nd_mysql<br>nd_mysqli<br>nd_pdo_mysql<br>oauth<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci - only EL6, EL7 (not EL8)<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pgsql<br>phalcon<br>phar<br>posix|propro<br>pspell<br>quickhash<br>radius<br>raphf<br>rar<br>recode<br>redis<br>rsync<br>snmp<br>soap<br>sockets<br>solr<br>spl_types<br>sqlite<br>ssh2<br>stats<br>stem<br>stomp<br>sybase_ct<br>sysvmsg<br>sysvsem<br>sysvshm<br>tideways|tidy<br>timezonedb<br>trader<br>translit<br>uploadprogress<br>uri_template<br>uuid<br>wddx<br>weakref<br>xdebug<br>xhprof<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xrange<br>xsl<br>yaf<br>yaml<br>yaz<br>ZendGuardLoader<br>zip<br>zmq|
-
-
-#### PHP 5.4 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apc<br>apcu<br>apm<br>ares<br>bcmath<br>big_int<br>bitset<br>bz2_filter<br>dba<br>dbase<br>dbx<br>dom<br>doublemetaphone<br>eio<br>enchant<br>fileinfo<br>functional<br>gd<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>haru|hidef<br>htscanner<br>http<br>igbinary<br>imagick<br>imap<br>inclued<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>libevent<br>libsodium<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongo<br>mongodb|msgpack<br>mssql<br>mysqlnd<br>ncurses<br>nd_mysql<br>nd_mysqli<br>nd_pdo_mysql<br>oauth<br>oci8 - only EL6, EL7 (not EL8)<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci - only EL6, EL7 (not EL8)<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pgsql<br>phalcon<br>phar<br>posix<br>propro<br>pspell|quickhash<br>radius<br>raphf<br>rar<br>recode<br>redis<br>rsync<br>snmp<br>soap<br>sockets<br>solr<br>spl_types<br>ssh2<br>stats<br>stem<br>stomp<br>sybase_ct<br>sysvmsg<br>sysvsem<br>sysvshm<br>tideways<br>tidy<br>timezonedb<br>trader|translit<br>uploadprogress<br>uri_template<br>uuid<br>wddx<br>weakref<br>xdebug<br>xhprof<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xrange<br>xsl<br>yaf<br>yaml<br>yaz<br>ZendGuardLoader<br>zip<br>zmq|
-
-#### PHP 5.5 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apcu<br>apm<br>ares<br>bcmath<br>big_int<br>bitset<br>bz2_filter<br>dba<br>dbase<br>dbx<br>dom<br>doublemetaphone<br>eio<br>enchant<br>file<br>info<br>gd<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>grpc<br>haru|hidef<br>htscanner<br>http<br>igbinary<br>imagick<br>imap<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>lib<br>event<br>libsodium<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongo|mongodb<br>msgpack<br>mssql<br>mysqlnd<br>ncurses<br>nd_mysql<br>nd_mysqli<br>nd_pdo_mysql<br>oauth<br>oci8 - only EL6, EL7 (not EL8)<br>odbc<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci - only EL6, EL7 (not EL8)<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pgsql<br>phalcon<br>phar|posix<br>propro<br>pspell<br>quickhash<br>radius<br>raphf<br>rar<br>recode<br>redis<br>rsync<br>snmp<br>soap<br>sockets<br>solr<br>spl_types<br>ssh2<br>stats<br>stem<br>stomp<br>sybase_ct<br>sysvmsg<br>sysvsem<br>sysvshm<br>tideways<br>tidy|timezonedb<br>trader<br>translit<br>uploadprogress<br>uri_template<br>uuid<br>wddx<br>weakref<br>xdebug<br>xhprof<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xrange<br>xsl<br>yaf<br>yaml<br>yaz<br>ZendGuardLoader<br>zip<br>zmq|
-
-
-#### PHP 5.6 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apcu<br>apm<br>ares<br>bcmath<br>big_int<br>bitset<br>bz2_filter<br>dba<br>dbase<br>dbx<br>dom<br>doublemetaphone<br>eio<br>enchant<br>file<br>info<br>gd<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>grpc<br>haru|htscanner<br>http<br>igbinary<br>imagick<br>imap<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>libevent<br>libsodium<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongo|mongodb<br>msgpack<br>mssql<br>mysqlnd<br>ncurses<br>nd_mysql<br>nd_mysqli<br>nd_pdo_mysql<br>oauth<br>oci8 - only EL6, EL7 (not EL8)<br>odbc<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci - only EL6, EL7 (not EL8)<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pgsql<br>phalcon<br>phar<br>posix|propro<br>pspell<br>quickhash<br>radius<br>raphf<br>rar<br>recode<br>redis<br>rsync<br>snmp<br>soap<br>sockets<br>solr<br>spl_types<br>ssh2<br>stats<br>stem<br>stomp<br>sybase_ct<br>sysvmsg<br>sysvsem<br>sysvshm<br>tideways|tidy<br>timezonedb<br>trader<br>translit<br>uploadprogress<br>uri_template<br>uuid<br>wddx<br>weakref<br>xdebug<br>xhprof<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xrange<br>xsl<br>yaml<br>yaz<br>ZendGuardLoader<br>zip<br>zmq|
-
-
-#### PHP 7.0 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apcu<br>bcmath<br>bitset<br>dba<br>dbase<br>dom<br>eio<br>enchant<br>fileinfo<br>gd<br>gearman<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>grpc<br>htscanner<br>http|igbinary<br>imagick<br>imap<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>libsodium<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongodb|mysqlnd<br>nd_mysqli<br>nd_pdo_mysql<br>newrelic<br>oauth<br>oci8 - only EL6, EL7 (not EL8)<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pdo_sqlsrv<br>pgsql<br>phalcon|phar<br>posix<br>propro<br>pspell<br>psr<br>raphf<br>rar<br>recode<br>redis<br>rrd<br>snmp<br>soap<br>sockets<br>solr<br>ssh2<br>stats<br>swoole<br>sysvmsg<br>sysvsem|sysvshm<br>tideways_xhprof<br>tidy<br>timezonedb<br>trader<br>uploadprogress<br>uuid<br>vips - only EL6, EL7 (not EL8)<br>wddx<br>xdebug<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xsl<br>yaf<br>yaml<br>yaz<br>zip<br>zmq|
-
-#### PHP 7.1 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apcu<br>bcmath<br>dba<br>dbase<br>dom<br>eio<br>enchant<br>fileinfo<br>gd<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>grpc<br>htscanner<br>http<br>igbinary|imagick<br>imap<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>libsodium<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongodb|mysqlnd<br>nd_mysqli<br>nd_pdo_mysql<br>newrelic<br>oauth<br>oci8<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pdo_sqlsrv<br>pgsql<br>phalcon|phar<br>posix<br>propro<br>pspell<br>psr<br>raphf<br>rar<br>recode<br>redis<br>snmp<br>soap<br>sockets<br>solr<br>ssh2<br>stats<br>swoole<br>sysvmsg<br>sysvsem|sysvshm<br>tideways - only EL8 (not EL6, EL7)<br>tideways_xhprof - only EL6, EL7 (not EL8)<br>tidy<br>timezonedb<br>trader<br>uploadprogress<br>uuid<br>vips - only EL6, EL7 (not EL8)<br>wddx|xdebug<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xsl<br>yaf<br>yaml<br>yaz - only EL6, EL7 (not EL8)<br>zip<br>zmq|
-
-#### PHP 7.2 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|amqp<br>apcu<br>bcmath<br>dba<br>dbase<br>dom<br>eio<br>enchant<br>fileinfo<br>gd<br>gearman<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>grpc<br>http<br>igbinary|imagick<br>imap<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>leveldb<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongodb<br>mysqlnd|nd_mysqli<br>nd_pdo_mysql<br>newrelic<br>oauth<br>oci8<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pdo_sqlsrv<br>pgsql<br>phalcon<br>phar|posix<br>propro<br>pspell<br>psr<br>raphf<br>recode<br>redis<br>rrd<br>snmp<br>soap<br>sockets<br>sodium<br>solr<br>sqlsrv<br>ssh2<br>stats<br>swoole<br>sysvmsg|sysvsem<br>sysvshm<br>tideways_xhprof<br>tidy<br>timezonedb<br>trader<br>uploadprogress<br>uuid<br>vips - only EL6, EL7 (not EL8)<br>wddx|xdebug<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xsl<br>yaml<br>yaz<br>zip<br>zmq|
-
-
-#### PHP 7.3 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|amqp<br>apcu<br>bcmath<br>dba<br>dbase<br>dom<br>eio<br>enchant<br>fileinfo<br>gd<br>gearman<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>grpc<br>http|igbinary<br>imagick<br>imap<br>inotify<br>interbase<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>leveldb<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached|mongodb<br>mysqlnd<br>nd_mysqli<br>nd_pdo_mysql<br>newrelic<br>oauth<br>oci8<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pdo_sqlsrv|pgsql<br>phalcon<br>phar<br>posix<br>propro<br>pspell<br>psr<br>raphf<br>recode<br>redis<br>rrd<br>snmp<br>soap<br>sockets<br>sodium<br>solr<br>sqlsrv<br>ssh2|stats<br>swoole<br>sysvmsg<br>sysvsem<br>sysvshm<br>tideways_xhprof<br>tidy<br>timezonedb<br>trader<br>uploadprogress<br>uuid<br>vips - only EL6, EL7 (not EL8)|wddx<br>xdebug<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xsl<br>yaml<br>yaz<br>zip<br>zmq|
-
-
-#### PHP 7.4 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apcu<br>bcmath<br>dba<br>dbase<br>dom<br>eio<br>enchant<br>fileinfo<br>gd<br>gearman<br>gender<br>geoip<br>geos<br>gmagick<br>gnupg<br>grpc<br>http|igbinary<br>imagick<br>imap<br>inotify<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>luasandbox - only EL6, EL7 (not EL8)<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongodb|mysqlnd<br>nd_mysqli<br>nd_pdo_mysql<br>newrelic<br>oauth<br>oci8<br>odbc<br>opcache<br>pdf<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pdo_sqlsrv|pgsql<br>phalcon<br>phar<br>posix<br>propro<br>pspell<br>psr<br>raphf<br>redis<br>rrd<br>snmp<br>soap<br>sockets<br>sodium<br>solr<br>ssh2<br>stats|swoole<br>sysvmsg<br>sysvsem<br>sysvshm<br>tideways_xhprof<br>tidy<br>timezonedb<br>trader<br>uploadprogress<br>uuid<br>vips - only EL6, EL7 (not EL8)|xdebug<br>xmlreader<br>xmlrpc<br>xmlwriter<br>xsl<br>yaml<br>yaz<br>zip<br>zmq|
-
-
-#### PHP 8.0 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|apcu<br>bcmath<br>dba<br>dbase<br>dom<br>enchant<br>ffi - only EL7, EL8<br>fileinfo<br>gd<br>gearman<br>geoip<br>gmagick<br>gnupg - only EL7<br>grpc<br>igbinary<br>imagick|imap<br>inotify<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongodb<br>mysqlnd<br>nd_mysqli|nd_pdo_mysql<br>newrelic<br>oauth<br>oci8<br>odbc<br>opcache<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pdo_sqlsrv<br>pgsql<br>phalcon|phar<br>posix<br>pspell<br>psr<br>raphf<br>redis<br>rrd<br>snmp<br>soap<br>sockets<br>sodium<br>solr<br>ssh2<br>swoole<br>sysvmsg<br>sysvsem|sysvshm<br>tideways_xhprof<br>tidy<br>timezonedb<br>trader<br>uploadprogress<br>uuid<br>vips - only EL6, EL7<br>xdebug<br>xmlreader|xmlrpc - only EL7, EL8<br>xmlwriter<br>xsl<br>yaml<br>yaz<br>zip<br>zmq|
-
-
-#### PHP 8.1 extensions
-
-|       |       |       |       |       |
-| :---: | :---: | :---: | :---: | :---: |
-|amqp<br>apcu<br>bcmath<br>dba<br>dbase<br>dom<br>enchant<br>ffi - only EL7, EL8<br>fileinfo<br>gd<br>geoip<br>gmagick<br>gmp<br>gnupg - only EL7<br>grpc- - only EL7, EL8<br>igbinary|imagick<br>imap<br>inotify<br>intl<br>ioncube_loader<br>jsmin<br>json<br>ldap<br>lzf<br>mailparse<br>mbstring<br>mcrypt<br>memcache<br>memcached<br>mongodb<br>mysqlnd|nd_mysqli<br>nd_pdo_mysql<br>oauth<br>oci8<br>odbc<br>opcache<br>pdo<br>pdo_dblib<br>pdo_firebird<br>pdo_oci<br>pdo_odbc<br>pdo_pgsql<br>pdo_sqlite<br>pdo_sqlsrv<br>pgsql<br>phalcon|phar<br>posix<br>pspell<br>psr<br>raphf<br>redis<br>snmp<br>soap<br>sockets<br>sodium<br>sqlite3<br>sqlsrv|ssh2<br>swoole<br>sysvmsg<br>sysvsem<br>sysvshm<br>tideways_xhprof<br>tidy<br>timezonedb<br>trader<br>uploadprogress<br>uuid|vips - only EL6, EL7<br>xdebug<br>xmlreader<br>xmlrpc - only EL7, EL8<br>xmlwriter<br>xsl<br>yaf<br>yaml<br>zip<br>zmq|
+You can find the list of the supported add-ons [here](https://docs.cloudlinux.com/cloudlinux_os_components/#bundled-php-extensions).
 
 ### How to use PHP-ELS
 
