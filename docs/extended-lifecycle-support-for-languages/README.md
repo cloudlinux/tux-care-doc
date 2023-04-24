@@ -12,7 +12,7 @@ TuxCare provides Extended Lifecycle Support through four years after the EOL dat
 | :-----------------------------------: | :--------------------------------------:      |
 | CentOS, CloudLinux, OracleLinux, etc. | 6.x 64-bit, 7.x 64-bit, 8.x 64-bit, 9.x 64-bit|
 | AlmaLinux                             | 8.x 64-bit, 9.x 64-bit                        |
-| Ubuntu                                | 16.04 64-bit, 18.04 64-bit, 20.04 64-bit      |
+| Ubuntu                                | 16.04 64-bit, 18.04 64-bit, 20.04, 22.04 64-bit      |
 
 ### Supported versions
 
