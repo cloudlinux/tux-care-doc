@@ -1306,40 +1306,17 @@ This is it!
 
 ## LibCare
 
-Formerly known as KernelCare+, LibCare detect and updates shared libraries in-memory without disrupting the applications using them.
+LibCare enables security patching of critical userspace shared libraries in-memory without restarting or disrupting the applications using them. This is techinical  documentation describing the solution; for a high level summary see [LibCare's main web site](https://tuxcare.com/enterprise-live-patching-services/libcare/).
 
-### Introduction
-LibCare is a patching tool for shared libraries and detecting library-related vulnerabilities. Its patches the library files in memory without rebooting.
+### Supported libraries and operating systems
 
-### Benefits
-Today in a lot of organizations, it's very challenging to get approval for maintenance windows that are required to reboot servers and restart an application. There are multiple applications running on a single server today shared the Glibc and OpenSSL libraries. 
-
-Even if they’re patched manually, without a reboot, shared libraries may contain vulnerabilities. When libraries are updated on disk, old unpatched files can persist in a server’s memory. What’s more, vulnerability scanners don’t detect these old unpatched library files in memory. With LibCare the local server libraries are fully protected against all knows attackers and vulnerability
-
-### Key Features
-* Rebootless Library Patching
-* Avoid rebooting the application
-* Support OpenSSL & Glibc
-
-### Getting trial license
-
-You will need a trial activation key to be able to use the KernelCare Enterprise. The trial license subscription will work for 7 days.
-
-If you have any issues getting activation key or if you have any questions regarding using your trial subscription – contact [sales@cloudlinux.com](mailto:sales@cloudlinux.com) and we will help.
+LibCare provide security updates for the OpenSSL and glibc libraries on many operating systems.
 
 ### Supported operating systems
 
-LibCare patching is now available for the following operating systems:
+LibCare patching is available for many operating systems including CentOS, AlmaLinux, Oracle Linux, Debian and Ubuntu.
 
-* CentOS/RHEL/CloudLinux OS 7
-* CloudLinux OS 8
-* AlmaLinux 8
-* Oracle Linux 7
-* Oracle Linux 8
-* Debian 9/10
-* Ubuntu 16.04/18.04/20.04
-* Proxmox VE 6
-* Scientific Linux
+[Check compatibility with your operating system](https://patches.kernelcare.com/).
 
 ### Installation and upgrade
 
@@ -1359,13 +1336,13 @@ To gather information about what processes were patched, run the following comma
 $ kcarectl --lib-info
 ```
 
-To gather information about applyed patches, run the following command:
+To gather information about applied patches, run the following command:
 
 ```
 $ kcarectl --lib-patch-info
 ```
 
-To unpatch all involved processes, run the following command:
+To unpatch all processes, run the following command:
 
 ```
 $ kcarectl --lib-unload
@@ -1407,6 +1384,19 @@ Userspace patching cron job is disabled by default. To enable it, run the follow
 ```
 libcare-cron init
 ```
+
+### Usage in containers
+
+LibCare supports containers natively. When run on the host it operates on all processes that are running, including processes present in containers. At the same time there are two types of con ways to use LibCare and each has its own advantages and disadvantages. Let's go through them.
+
+#### Disposable container servers
+
+Disposable container servers are services that are run within a container for limited time and are refreshed periodically, e.g., daily to get the latest security updates. The recommended way to run LibCare with disposable containers is by installing `kernelcare` on the host, and it will automatically patch all processes libraries in the containers.
+
+#### Persistent container servers
+
+Persistent container servers are services that are run in containers the same way as a traditional physical server, i.e., the LXC approach. Although LibCare can run the same way as with disposable containers, it is also possible to install `kernelcare` within each container and that will enable live patching of the processes of each container individually. That approach enables accurate patching information within each containerized server that can be used by the available vulnerability scanner. When using this approach userspace patching must be disabled on the host using `kcarectl --disable-libcare`.
+
 
 ### Troubleshooting
 
