@@ -1387,7 +1387,7 @@ libcare-cron init
 
 ### Usage in containers
 
-LibCare supports containers natively. When run on the host it operates on all processes that are running, including processes present in containers. At the same time there are two types of con ways to use LibCare and each has its own advantages and disadvantages. Let's go through them.
+LibCare supports containers natively, including docker, LXC and other containerization technologies. When run on the host it operates on all processes that are running, including processes present in containers. At the same time there are two ways to use LibCare with containers and each has its own advantages and disadvantages. Let's go through them.
 
 #### Disposable container servers
 
