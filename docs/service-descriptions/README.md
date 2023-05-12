@@ -1,7 +1,7 @@
 # Service Descriptions
 
 
-In this section you can find the AlmaCare Service Description.
+In this document we provide detailed information on TuxCare products service description.
 
 ## AlmaCare
 
@@ -139,3 +139,34 @@ Technical support covered by any of the AlmaCare Support Programs shall not be p
 * Incidents caused by installing and running third-party applications (including, but not limited to the list of unsupported or incompatible applications published in the documentation)
 * Incidents for which the Customer cannot provide accurate information, as reasonably requested by AlmaCare, in order to reproduce, investigate, and resolve the incident
 * Incidents which arise as a result of neglect or incorrect use of AlmaCare instructions, which, if properly used, would have prevented the Incident
+
+
+## Technical Account Manager
+
+### Technical Account Manager (TAM)
+A Technical Account Manager (TAM) is an extension to TuxCare products to enhance product and support experience.
+ 
+ * TuxCare provides a technical account manager that for up to 8 hours per week can perform the following tasks.
+  * Provides best in practice configuration assistance.
+  * Provides product presentation and trainings.
+  * Participate in calls every other week identifying and addressing the customer’s operational issues.
+  * Organise multi-vendor issue coordination through TuxCare's partners when applicable.
+ * The TAM is available for customer requests during regular working hours for the TAM. Outside working hours support is provided through regular TuxCare support.
+
+
+### Dedicated Technical Account Manager (dTAM)
+
+A dedicated Technical Account Manager (dTAM) is an extension to TuxCare products to enhance product and support experience.
+
+ * TuxCare provides a dedicated technical account manager that for up to 40 hours per week can perform the following tasks.
+  * Acts as a primary point of contact for all TuxCare product related requests from the customer.
+  * Provides best in practice configuration assistance.
+  * Provides product presentation and trainings.
+  * Can assume maintenance and configuration tasks of TuxCare products on agreement.
+  * Participate in calls every other week identifying and addressing the customer’s operational issues.
+  * Organise multi-vendor issue coordination through TuxCare's partners when applicable.
+  * Facilitate integration of customer's ticketing system with TuxCare's when applicable.
+  * Attend applicable TuxCare trainings and development activities.
+ * The dTAM is available for customer requests during regular working hours for the dTAM and is subject to TuxCare leave policies. Outside working hours support is provided through regular TuxCare support.
+ * The dTAM will visit the customers site annual or twice per year according to agreement.
+ * If the dTAM is on annual leave for more than 5 consequent days, TuxCare will assign a temporary account manager. 
