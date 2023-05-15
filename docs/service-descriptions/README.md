@@ -149,7 +149,7 @@ A Technical Account Manager (TAM) is an extension to TuxCare products to enhance
  * TuxCare provides a technical account manager that for up to 8 hours per week can perform the following tasks.
   * Provides best in practice configuration assistance.
   * Provides product presentation and trainings.
-  * Participate in calls every other week identifying and addressing the customer’s operational issues.
+  * Participate in calls every other week identifying and addressing the customer's operational issues related to the TuxCare products.
   * Organise multi-vendor issue coordination through TuxCare's partners when applicable.
  * The TAM is available for customer requests during regular working hours for the TAM. Outside working hours support is provided through regular TuxCare support.
 
@@ -163,7 +163,7 @@ A dedicated Technical Account Manager (dTAM) is an extension to TuxCare products
   * Provides best in practice configuration assistance.
   * Provides product presentation and trainings.
   * Can assume maintenance and configuration tasks of TuxCare products on agreement.
-  * Participate in calls every other week identifying and addressing the customer’s operational issues.
+  * Participate in calls every other week identifying and addressing the customer's operational issues related to the TuxCare products.
   * Organise multi-vendor issue coordination through TuxCare's partners when applicable.
   * Facilitate integration of customer's ticketing system with TuxCare's when applicable.
   * Attend applicable TuxCare trainings and development activities.
