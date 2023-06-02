@@ -4,13 +4,16 @@ This AlmaCare Guide guide describes [AlmaCare](https://tuxcare.com/almacare) and
 
 ## What is AlmaCare?
 
-AlmaCare brings essential support and a 16-year long lifecycle to your AlmaLinux systems. It comes with high value extensions that enable your cybersecurity compliance with rapid security updates and your compliance with the FIPS 140-3 standard.
+AlmaCare is a comprehensive support solution designed for organizations using Enterprise Linux, such as AlmaLinux. It caters to organizations that value stability and reliability, preferring to deploy and run their applications without the need for frequent OS upgrades. With a long lifecycle of 16 years, AlmaCare ensures extended support for their applications until the hardware is decommissioned.
 
-Available extensions:
- * **Cybersecurity Extension**: Automated security updates for the kernel and critical userspace with zero reboots and zero downtime
- * **FIPS Compliance Extension**: Regular FIPS 140-3 re-certifications and security patches without impacting FIPS compliance (coming soon)
+AlmaCare offers the following extensions to enhance its support capabilities:
+ * **CyberSecurity extension**: Provides automation to infrastructure with rapid security updates using live patching for critical components such as the kernel, openssl, and glibc. It ensures compliance with organization's security requirements without burdening teams.
+ * **FIPS extension**: Designed for regulated organizations, it enables compliance with the US government FIPS data protection standard. AlmaCare ensures FIPS 140 compliance and delivers tailored security updates for maintaining security while meeting regulatory standards.
+ * **Enhanced support**: Goes beyond application support and includes additional services such as consulting and configuration assistance. This comprehensive support package caters to the diverse needs of organizations using Enterprise Linux.
 
-Learn more at [https://tuxcare.com/almacare](https://tuxcare.com/almacare)
+With these extensions, AlmaCare empowers organizations to secure their systems, comply with regulations, and receive comprehensive support to optimize their operations.
+
+Learn more at [https://tuxcare.com/almacare](https://tuxcare.com/almacare).
 
 ## Requirements
 
@@ -58,7 +61,11 @@ Then you will have to run `almacarectl` like this:
 
 ## The AlmaCare Cybersecurity Extension
 
-The AlmaCare Cybersecurity Extension brings rapid security patching for the kernel and critical userspace packages such as `glibc` and `openssl` using the [KernelCare live patching technology](https://tuxcare.com/enterprise-live-patching-services/kernelcare-enterprise/).
+The AlmaCare cybersecurity extension, is a powerful solution for robust security patching in AlmaLinux systems. This extension delivers rapid security updates and live patching capabilities specifically designed for the kernel and critical components, guaranteeing continuous protection against vulnerabilities without the need for disruptive reboots or maintenance windows. With AlmaCare's cybersecurity add-on, organizations can maintain a highly secure environment while optimizing resource allocation and minimizing potential risks.
+
+Through live patching, critical system components like openssl and glibc can be patched in real-time, ensuring the entire organization remains shielded from critical vulnerabilities. This approach, based on [KernelCare technology](https://tuxcare.com/enterprise-live-patching-services/kernelcare-enterprise/), significantly reduces the attack surface, providing enhanced protection for sensitive data and critical systems. Moreover, the add-on streamlines the patching process by addressing all vulnerabilities, eliminating the need for time-consuming risk assessments and extensive back-and-forth coordination between security and IT teams.
+
+The AlmaCare cybersecurity add-on empowers organizations to effortlessly comply with security requirements and industry standards by automating the patching process. This automation removes the burden of manually analyzing and prioritizing CVEs, allowing security teams to focus on strategic initiatives rather than engaging in repetitive and time-intensive tasks. With its unparalleled convenience and robust functionality, the cybersecurity add-on equips organizations with the tools necessary to efficiently and effectively safeguard their AlmaLinux systems.
 
 ### Installation
 
