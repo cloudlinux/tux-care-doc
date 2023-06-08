@@ -42,7 +42,7 @@ and the following number of connected servers:
 
 ## Installation
 
-ePortal is compatible with 64-bit versions of EL7/8 based distros like CentOS 7/8, AlmaLinux 8 and
+ePortal is compatible with 64-bit versions of EL7/8/9 based distros like CentOS 7/8, AlmaLinux 8/9 and
 Ubuntu 20.04/22.04.
 
 ### RHEL-based distros
@@ -467,6 +467,14 @@ Once you set up patch source access info, you will get to a list of available pa
 
 * **Manage**: opens dialog to enable/disable the patchset.
 
+### AlmaCare Cybersecurity patch management
+
+After enabling **AlmaCare Cybersecurity** product for one of the keys AlmaCare
+patchsets would be available on a separate dashboard tab page:
+
+![](/images/eportal-dashboard-alma.png)
+
+
 ### Manage patchset page
 
 ![](/images/eportal-manage.png)
@@ -704,7 +712,26 @@ Fill in the following fields:
   automatically generated key will be used
 * **Description** — you can provide a description for the key
 * **Server Limit** — the amount of servers that can be registered under that key
-* **Feed** — select a specific feed or leave empty.
+* **Feed** — select a specific feed or leave empty. Take note: keys with
+  KCE/AlmaCare Cybersecurity products can't share the same feed.
+* **Products** - limit allowed products can be used with the key.
+
+Available products:
+
+* **KernelCare**/**LibCare**/**QemuCare**/**DBCare**: allow only patches of selected
+    type.
+* **AlmaCare**: allow access to AlmaCare package repository with security updates.
+* **AlmaCare Cybersecurity**: allow access to AlmaCare package repository with security
+   updates and allow to use AlmaLinux live patches.
+
+Products can be mixed to limit access to a particular set of patch types.
+For example:
+
+* **KernelCare** + **LibCare**: allow access only to kernel and lib patches.
+* **AlmaCare Cybersecurity** + **KernelCare**: allow access only to AlmaCare kernel live patches.
+
+For AlmaCare deployment instructions please look into
+a [dedicated section](#deploying-almacare-almacare-cybersecurity).
 
 Click _Save_ to add the key. The new registration key will be created and added
 to the list. The key itself will be used as a part of the registration command
@@ -720,8 +747,8 @@ Click _Cancel_ to return to the key list tab without adding a new key.
 
 ```
 ~$ kc.eportal key --help
-usage: kc.eportal key [-h] [-a] [-c] [--note NOTE]
-                      [--server-limit SERVER_LIMIT] [--feed FEED]
+usage: kc.eportal key [-h] [-a] [-c] [--note NOTE] [--server-limit SERVER_LIMIT] [--feed FEED]
+                      [--product {almacare-cybersecurity,almacare-repo,db,kernel,libcare,qemu}] [--default-products]
                       [key]
 
 list available keys by default
@@ -737,6 +764,9 @@ optional arguments:
   --server-limit SERVER_LIMIT
                         maximum number of servers allowed
   --feed FEED           feed to associate key to
+  --product {almacare-cybersecurity,almacare-repo,db,kernel,libcare,qemu}
+                        products available for the key, can be specified multiple times
+  --default-products    set default product list (KernelCare, LibCare, DBCare, QEMUCare) for the key
 ```
 
 List keys:
@@ -837,6 +867,10 @@ Available options:
 * Auto update — enable and disable automatic downloading of patches to this feed.
 * Deploy after X hours — a delay in hours between the moment the patchset is
   available for deployment and the moment it is installed to the feed.
+* Channel - a patch channel to use.
+
+  * **Stable**: (default) stable patchsets marked with `eportal` label on [the patch server](https://patches.kernelcare.com/).
+  * **Testing**: all patchsets available on [the patch server](https://patches.kernelcare.com/).
 
 Every 10 minutes ePortal checks for new patches on the main patch server. If
 a new patch is available, it is uploaded to the ePortal server. Note: it is
@@ -884,9 +918,8 @@ default feed.
 
 ```
 ~$ kc.eportal feed --help
-usage: kc.eportal feed [-h] [-a] [-c] [--auto] [--no-auto]
-                       [--deploy-after hours]
-                       [feed]
+usage: kc.eportal feed [-h] [-a] [-c] [--auto] [--no-auto] [--deploy-after hours]
+                       [--channel {default,test}] [feed]
 
 list available feeds by default
 
@@ -900,6 +933,8 @@ optional arguments:
   --auto                update feed automatically
   --no-auto             don't update feed automatically
   --deploy-after hours  deploy after specified hours
+  --channel {default,test}
+                        patchset channel to use for this feed
 ```
 
 List feeds:
@@ -1289,6 +1324,21 @@ curl -s http://your-eportal-domain/set-patch-server | bash
 * `set-kernelcare-repo` configures new package repo to download agent updates
 through ePortal.
 * `set-patch-server` configures new address of patch server.
+
+
+## Deploying AlmaCare/AlmaCare Cybersecurity
+
+You can find instructions how to setup [AlmaCare](/almacare/) on http://your-eportal-domain/admin/docs/.
+
+To setup AlmaCare through ePortal you can use special endpoint `http://your-eportal-domain/install-almacare`:
+
+```
+$ curl -s http://eportal.mycompany.com/install-almacare | bash
+$ almactl --register my-key
+```
+
+Where `my-key` should have enabled `AlmaCare` or `AlmaCare Cybersecurity`
+products.
 
 
 ## Migrate ePortal
