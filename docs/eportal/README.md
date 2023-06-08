@@ -122,6 +122,13 @@ Install ePortal:
 ```
 apt-get update && apt-get install -y --no-install-recommends kcare-eportal
 ```
+## Allowed hosts
+We must declare the list of allowed hosts in the configuration for security reasons. It help to avoid HTTP Host header attacks.
+According to your installation, you need to add this parameter into [ePortal config file](#config-files).
+```python
+ALLOWED_HOSTS = ['node1-yourdomain.example.com', 'node2-yourdomain.example.com']
+```
+Instead of an example, use the DNS name(s) of your ePortal server installation. Deafault value is `[]`.
 
 ## Cache mode
 
@@ -1442,16 +1449,24 @@ Nginx error log: `/var/log/nginx/error.log`
 
 ### Log rotation
 
-By default there are predefined configs for ePortal's logs rotation provided by Nginx 
-and installing `logrotate` package would be sufficient. The rotation enabled for 
-/`/var/log/nginx/kcare-eportal.log` file by `/etc/logrotate.d/nginx` config:
+By default there is no predefined parameters for ePortal's logs rotation. If you
+want to enable it for the files listed above:
 
-``` 
-/var/log/nginx/*.log {
-        daily
-...
+ - Install `logrotate` package
+ - Create/edit `/etc/logrotate.d/eportal` configuration file
+
+Example logrotate config:
+
+```
+/var/log/nginx/kcare-eportal.log {
+    daily
+    rotate 5 # keep 5 last archives
+    missingok # it's ok if there is no such file
+    notifempty # do nothing if file is empty
+    compress
 }
 ```
+
 
 ## Nagios & Zabbix support
 
