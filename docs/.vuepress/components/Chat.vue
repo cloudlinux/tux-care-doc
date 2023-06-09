@@ -34,7 +34,8 @@ export default {
                 colorScheme: '#0098f9',
                 boardContentBg: '#f4f4f4',
                 msgBubbleBgBot: '#fff',
-                msgBubbleBgUser: '#0098f9'
+                msgBubbleBgUser: '#0098f9',
+                inputPlaceholder: 'Ask a new question'
             },
             docName: "tux-care-doc"
         }

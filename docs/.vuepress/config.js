@@ -129,12 +129,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   },
 
     defaultURL: "/tuxcare/",
-    submitRequestURL: "https://tuxcare.com/support-portal/",
     hideHeading: true,
     redirectionMapping: urls,
     sidebarDepth: 2,
     logo: "/logo.svg",
-    try_free: "https://portal.tuxcare.com",
     gtm_code: "GTM-5BSW555",
 
     social: [
@@ -150,6 +148,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     locales: {
       "/": {
         stayInTouch: "Stay in touch",
+        navbarLinks: [
+          {
+            text: "Ask GPT?",
+            event: {
+              type: 'event',
+              name: 'botui-open'
+            }
+          },
+          {
+            text: "Contact Support",
+            url: "https://tuxcare.com/support-portal/"
+          },
+          {
+            text: "Login to TuxCare portal",
+            url: "https://portal.tuxcare.com"
+          }
+        ],
         bottomLinks: [
           {
             text: "FAQ",
@@ -175,8 +190,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         label: "English",
         // text for the edit-on-github link
         editLinkText: "Edit this page",
-        tryFree: "Login to TuxCare portal",
-        submitRequest: "Contact Support",
         customHomeUrl: "https://www.tuxcare.com",
         search: "Search",
         // config for Service Worker
@@ -230,6 +243,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           appId: "R7FCMJM4P7"
         },
         stayInTouch: "連絡を取り合う",
+        navbarLinks: [
+          {
+            text: "Ask GPT?",
+            event: {
+              type: 'event',
+              name: 'botui-open'
+            }
+          },
+          {
+            text: "Contact Support",
+            url: "https://tuxcare.com/support-portal/"
+          },
+          {
+            text: "Login to TuxCare portal",
+            url: "https://portal.tuxcare.com"
+          }
+        ],
         bottomLinks: [
             {
                 text: "よく寄せられる質問",
