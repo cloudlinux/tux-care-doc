@@ -18,7 +18,12 @@ const autoMetaOptions = {
   canonical_base: '/',
 };
 
+const { path } = require('@vuepress/utils')
+
 module.exports = {
+  globalUIComponents: [
+    'Chat'
+  ],
   plugins: [
     ['container', {
       type: 'warning',
@@ -41,7 +46,13 @@ module.exports = {
         //'ga': 'G-RSVSWSBDSK'
       //}
     //],
-    [ 'autometa', autoMetaOptions ]
+    [ 'autometa', autoMetaOptions ],
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ]
   ],
   configureWebpack: {
     resolve: {
